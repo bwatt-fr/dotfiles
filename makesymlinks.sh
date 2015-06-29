@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
+files="bashrc vimrc vim zshrc tmux.conf"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -29,6 +29,9 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     if [[ ! -d $dir/oh-my-zsh/ ]]; then
         git clone http://github.com/robbyrussell/oh-my-zsh.git
     fi
+    mv $dir/oh-my-zsh ~/.oh-my-zsh
+    rm ~/.oh-my-zsh/oh-my-zsh.sh
+    ln -s $dir/oh-my-zsh.sh ~/.oh-my-zsh/oh-my-zsh.sh
     # Set the default shell to zsh if it isn't currently set to zsh
     if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
         chsh -s $(which zsh)
