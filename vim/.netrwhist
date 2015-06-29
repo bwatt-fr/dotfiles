@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/pierrick/Developpement/Outils/service/.git'
+let g:netrw_dirhist_2='/home/pierrick/Developpement/Applis/podcast-logs-stats/server/lib'
+let g:netrw_dirhist_3='/home/pierrick/Developpement/Outils/service/service.egg-info'
+let g:netrw_dirhist_4='/home/pierrick/Developpement/Outils/GAconnector/GAconnector'
+let g:netrw_dirhist_5='/home/pierrick/.ccm'
+let g:netrw_dirhist_6='/home/pierrick/Developpement/Applis/at-appengine-logs'
+let g:netrw_dirhist_7='/home/pierrick/Developpement/Applis/queue-test'
+let g:netrw_dirhist_8='/home/pierrick/Projet/AAA/aaa_data/cluster_creation'
