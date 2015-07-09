@@ -9,6 +9,9 @@
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="bashrc vimrc vim zshrc tmux.conf"    # list of files/folders to symlink in homedir
+apt=`command -v apt-get`
+yum=`command -v yum`
+packages="tmux vim htop ncdu zsh python-virtualenv"
 
 ##########
 
@@ -22,6 +25,12 @@ echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
+if [ -n "$apt" ]; then
+    sudo apt-get install -y $packages
+elif [ -n "$yum" ]; then
+    sudo yum install -y $packages
+fi	
+
 install_zsh () {
 # Test to see if zshell is installed.  If it is:
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
@@ -34,19 +43,7 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     ln -s $dir/oh-my-zsh.sh ~/.oh-my-zsh/oh-my-zsh.sh
     # Set the default shell to zsh if it isn't currently set to zsh
     if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
-        chsh -s $(which zsh)
-    fi
-else
-    # If zsh isn't installed, get the platform of the current machine
-    platform=$(uname);
-    # If the platform is Linux, try an apt-get to install zsh and then recurse
-    if [[ $platform == 'Linux' ]]; then
-        sudo apt-get install zsh
-        install_zsh
-    # If the platform is OS X, tell the user to install zsh :)
-    elif [[ $platform == 'Darwin' ]]; then
-        echo "Please install zsh, then re-run this script!"
-        exit
+        sudo chsh -s $(which zsh)
     fi
 fi
 }
