@@ -11,7 +11,7 @@ olddir=~/dotfiles_old             # old dotfiles backup directory
 files="bashrc vimrc vim zshrc tmux.conf"    # list of files/folders to symlink in homedir
 apt=`command -v apt-get`
 yum=`command -v yum`
-packages="tmux vim htop ncdu zsh python-virtualenv"
+packages="tmux vim htop ncdu zsh python-virtualenv fortune-fr"
 
 ##########
 
@@ -43,7 +43,7 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     ln -s $dir/oh-my-zsh.sh ~/.oh-my-zsh/oh-my-zsh.sh
     # Set the default shell to zsh if it isn't currently set to zsh
     if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
-        sudo chsh -s $(which zsh)
+        chsh -s $(which zsh)
     fi
 fi
 }
