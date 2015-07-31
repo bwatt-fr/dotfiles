@@ -8,9 +8,10 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim zshrc tmux.conf"    # list of files/folders to symlink in homedir
+files="bashrc vimrc vim zshrc tmux.conf oh-my-zsh git.scmbrc"    # list of files/folders to symlink in homedir
 apt=`command -v apt-get`
 yum=`command -v yum`
+packages="tmux vim htop ncdu zsh python-virtualenv fortune-fr"
 
 ##########
 
@@ -23,6 +24,12 @@ echo "...done"
 echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
+
+if [ -n "$apt" ]; then
+    sudo apt-get install -y $packages
+elif [ -n "$yum" ]; then
+    sudo yum install -y $packages
+fi	
 
 install_zsh () {
 # Test to see if zshell is installed.  If it is:
@@ -61,6 +68,7 @@ fi
 }
 
 install_zsh
+git clone https://github.com/ndbroadbent/scm_breeze.git ~/.scm_breeze
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do
