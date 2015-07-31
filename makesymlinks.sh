@@ -9,6 +9,8 @@
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="bashrc vimrc vim zshrc tmux.conf"    # list of files/folders to symlink in homedir
+apt=`command -v apt-get`
+yum=`command -v yum`
 
 ##########
 
@@ -41,7 +43,14 @@ else
     platform=$(uname);
     # If the platform is Linux, try an apt-get to install zsh and then recurse
     if [[ $platform == 'Linux' ]]; then
-        sudo apt-get install zsh
+	if [ -n "$apt" ]; then
+            sudo apt-get -y install zsh
+	elif [ -n "$yum" ]; then
+            sudo yum -y install zsh
+	else
+	    echo "Err: no path to apt-get or yum";
+	    exit 1
+	fi
         install_zsh
     # If the platform is OS X, tell the user to install zsh :)
     elif [[ $platform == 'Darwin' ]]; then
