@@ -1,4 +1,9 @@
-set nocompatible "Not vi compativle (Vim is king)
+
+
+" Display
+set ruler
+set title
+set wrap
 
 """"""""""""""""""""""""""""""""""
 " Syntax and indent
@@ -6,9 +11,17 @@ set nocompatible "Not vi compativle (Vim is king)
 syntax on " Turn on syntax highligthing
 set showmatch  "Show matching bracets when text indicator is over them
 
+" Search
+set ignorecase
+set hlsearch
+
+" Color
+set background=dark
+"colorscheme solarized
 colorscheme delek
 
 set nocompatible
+
 " Switch on filetype detection and loads 
 " indent file (indent.vim) for specific file types
 filetype indent on
@@ -23,7 +36,6 @@ filetype plugin on
 set hls " highlight search
 set lbr " linebreak
 
-set background=dark
 set showcmd
 set mouse=a
 
