@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
+files="bashrc vimrc vim zshrc oh-my-zsh git.scmbrc"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -49,6 +49,10 @@ fi
 }
 
 install_zsh
+
+# install scm_breeze
+echo "Cloning scl_breeze"
+git clone https://github.com/ndbroadbent/scm_breeze.git ~/.scm_breeze
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do

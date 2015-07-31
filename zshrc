@@ -88,5 +88,4 @@ TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 
 #Add of scm-breeze
 
-
-[ -s "/home/pierrick/.scm_breeze/scm_breeze.sh" ] && source "/home/pierrick/.scm_breeze/scm_breeze.sh"
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
