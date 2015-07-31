@@ -8,7 +8,10 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim zshrc oh-my-zsh git.scmbrc"    # list of files/folders to symlink in homedir
+files="bashrc vimrc vim zshrc tmux.conf oh-my-zsh git.scmbrc"    # list of files/folders to symlink in homedir
+apt=`command -v apt-get`
+yum=`command -v yum`
+packages="tmux vim htop ncdu zsh python-virtualenv fortune-fr"
 
 ##########
 
@@ -22,6 +25,12 @@ echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
+if [ -n "$apt" ]; then
+    sudo apt-get install -y $packages
+elif [ -n "$yum" ]; then
+    sudo yum install -y $packages
+fi	
+
 install_zsh () {
 # Test to see if zshell is installed.  If it is:
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
@@ -29,6 +38,9 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     if [[ ! -d $dir/oh-my-zsh/ ]]; then
         git clone http://github.com/robbyrussell/oh-my-zsh.git
     fi
+    mv $dir/oh-my-zsh ~/.oh-my-zsh
+    rm ~/.oh-my-zsh/oh-my-zsh.sh
+    ln -s $dir/oh-my-zsh.sh ~/.oh-my-zsh/oh-my-zsh.sh
     # Set the default shell to zsh if it isn't currently set to zsh
     if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
         chsh -s $(which zsh)
@@ -38,7 +50,14 @@ else
     platform=$(uname);
     # If the platform is Linux, try an apt-get to install zsh and then recurse
     if [[ $platform == 'Linux' ]]; then
-        sudo apt-get install zsh
+	if [ -n "$apt" ]; then
+            sudo apt-get -y install zsh
+	elif [ -n "$yum" ]; then
+            sudo yum -y install zsh
+	else
+	    echo "Err: no path to apt-get or yum";
+	    exit 1
+	fi
         install_zsh
     # If the platform is OS X, tell the user to install zsh :)
     elif [[ $platform == 'Darwin' ]]; then
@@ -51,7 +70,7 @@ fi
 install_zsh
 
 # install scm_breeze
-echo "Cloning scl_breeze"
+echo "Cloning scm_breeze"
 git clone https://github.com/ndbroadbent/scm_breeze.git ~/.scm_breeze
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
