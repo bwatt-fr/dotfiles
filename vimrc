@@ -1,4 +1,5 @@
-
+" Activation of pathogen
+call pathogen#infect()
 
 " Display
 set ruler
