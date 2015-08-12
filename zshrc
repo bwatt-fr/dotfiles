@@ -89,3 +89,8 @@ TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 #Add of scm-breeze
 
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+
+# Add of gcloud command completion
+
+source "$HOME/google-cloud-sdk/completion.zsh.inc"
+source "$HOME/google-cloud-sdk/path.zsh.inc"
