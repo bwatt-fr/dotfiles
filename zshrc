@@ -54,7 +54,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/home/pierrick/.local/bin:/home/pierrick/anaconda/bin:/home/pierrick/google-cloud-sdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/pierrick/opt/node-webkit:/home/pierrick/Logiciel/alt"
+export PATH="/home/pierrick/.local/bin:/home/pierrick/google-cloud-sdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/pierrick/opt/node-webkit:/home/pierrick/Logiciel/alt"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -94,3 +94,4 @@ TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 
 source "$HOME/google-cloud-sdk/completion.zsh.inc"
 source "$HOME/google-cloud-sdk/path.zsh.inc"
+source /usr/local/bin/virtualenvwrapper.sh

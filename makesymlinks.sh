@@ -12,6 +12,8 @@ files="bashrc vimrc vim zshrc tmux.conf oh-my-zsh git.scmbrc"    # list of files
 apt=`command -v apt-get`
 yum=`command -v yum`
 packages="tmux vim htop ncdu zsh python-virtualenv fortune-fr"
+packages_apt="virtualenvwrapper"
+packages_yum="python-vitualenvwrapper"
 
 ##########
 
@@ -27,8 +29,10 @@ echo "...done"
 
 if [ -n "$apt" ]; then
     sudo apt-get install -y $packages
+    sudo apt-get install -y $packages_apt
 elif [ -n "$yum" ]; then
     sudo yum install -y $packages
+    sudo yum install -y $packages_yum
 fi	
 
 install_zsh () {
