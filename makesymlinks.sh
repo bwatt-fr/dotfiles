@@ -28,11 +28,19 @@ cd $dir
 echo "...done"
 
 if [ -n "$apt" ]; then
-    sudo apt-get install -y $packages
-    sudo apt-get install -y $packages_apt
+    for pack in $packages; do
+	sudo apt-get install -y $pack
+    done
+    for pack in $packages_apt; do
+	sudo apt-get install -y $pack
+    done
 elif [ -n "$yum" ]; then
-    sudo yum install -y $packages
-    sudo yum install -y $packages_yum
+    for pack in $packages; do
+	sudo yum install -y $pack
+    done
+    for pack in $packages_apt; do
+	sudo yum install -y $pack
+    done
 fi	
 
 install_zsh () {
