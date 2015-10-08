@@ -44,7 +44,7 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     fi
     mv $dir/oh-my-zsh ~/.oh-my-zsh
     rm ~/.oh-my-zsh/oh-my-zsh.sh
-    ln -s $dir/oh-my-zsh.sh ~/.oh-my-zsh/oh-my-zsh.sh
+    cp $dir/oh-my-zsh.sh ~/.oh-my-zsh/oh-my-zsh.sh
     # Set the default shell to zsh if it isn't currently set to zsh
     if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
         chsh -s $(which zsh)

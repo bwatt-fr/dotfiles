@@ -15,6 +15,8 @@ set showmatch  "Show matching bracets when text indicator is over them
 " Search
 set ignorecase
 set hlsearch
+set incsearch
+set smartcase
 
 " Color
 set background=dark
@@ -49,5 +51,19 @@ imap :: <ESC>
 
 
 "Activation of NERDTree
-autocmd vimenter * NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"autocmd vimenter * NERDTree
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+"Desactivation of the directional arrows
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+"Mapleader
+let mapleader = ","
+set hidden
