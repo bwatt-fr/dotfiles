@@ -8,10 +8,10 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim zshrc tmux.conf oh-my-zsh git.scmbrc"    # list of files/folders to symlink in homedir
+files="bashrc vimrc vim zshrc tmux.conf git.scmbrc"    # list of files/folders to symlink in homedir
 apt=`command -v apt-get`
 yum=`command -v yum`
-packages="tmux vim htop ncdu zsh python-virtualenv fortune-fr"
+packages="tmux vim htop ncdu zsh python-virtualenv"
 packages_apt="virtualenvwrapper"
 packages_yum="python-vitualenvwrapper"
 
@@ -47,10 +47,9 @@ install_zsh () {
 # Test to see if zshell is installed.  If it is:
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     # Clone my oh-my-zsh repository from GitHub only if it isn't already present
-    if [[ ! -d $dir/oh-my-zsh/ ]]; then
-        git clone http://github.com/robbyrussell/oh-my-zsh.git
+    if [[ ! -d ~/.oh-my-zsh/ ]]; then
+        git clone http://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     fi
-    mv $dir/oh-my-zsh ~/.oh-my-zsh
     rm ~/.oh-my-zsh/oh-my-zsh.sh
     cp $dir/oh-my-zsh.sh ~/.oh-my-zsh/oh-my-zsh.sh
     # Set the default shell to zsh if it isn't currently set to zsh
@@ -83,7 +82,9 @@ install_zsh
 
 # install scm_breeze
 echo "Cloning scm_breeze"
-git clone https://github.com/ndbroadbent/scm_breeze.git ~/.scm_breeze
+if [[ ! -d ~/.scm_breeze ]]; then
+    git clone https://github.com/ndbroadbent/scm_breeze.git ~/.scm_breeze
+fi
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do
