@@ -73,9 +73,6 @@ export PATH="/home/pierrick/.local/bin:/home/pierrick/google-cloud-sdk/bin:/usr/
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# The next line updates PATH for the Google Cloud SDK.
-#source /home/pierrick/google-cloud-sdk/path.bash.inc
-
 # The next line enables bash completion for gcloud.
 #source /home/pierrick/google-cloud-sdk/completion.bash.inc
 
@@ -95,3 +92,9 @@ TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 source "$HOME/google-cloud-sdk/completion.zsh.inc"
 source "$HOME/google-cloud-sdk/path.zsh.inc"
 source /usr/local/bin/virtualenvwrapper.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/home/pierrick/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/home/pierrick/google-cloud-sdk/completion.zsh.inc'
