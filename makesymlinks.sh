@@ -12,8 +12,8 @@ files="bashrc vimrc vim zshrc tmux.conf git.scmbrc"    # list of files/folders t
 apt=`command -v apt-get`
 yum=`command -v yum`
 packages="tmux vim htop ncdu zsh python-virtualenv"
-packages_apt="virtualenvwrapper"
-packages_yum="python-vitualenvwrapper"
+packages_apt="virtualenvwrapper ack-grep"
+packages_yum="python-vitualenvwrapper ack"
 
 ##########
 
