@@ -67,3 +67,11 @@ imap <right> <nop>
 "Mapleader
 let mapleader = ","
 set hidden
+
+" Parametres par defaut pour ack
+let g:ackprg="ack -H --nocolor --nogroup --column"
+" " Place un marqueur et cherche
+nmap <leader>j mA:Ack<space>
+" " Place un marqueur et cherche le mot sous le curseur
+nmap <leader>ja mA:Ack "<C-r>=expand("<cword>")<cr>"
+nmap <leader>jA mA:Ack "<C-r>=expand("<cWORD>")<cr>"
