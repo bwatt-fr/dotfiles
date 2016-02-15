@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim zshrc tmux.conf git.scmbrc"    # list of files/folders to symlink in homedir
+files="bashrc vimrc vim zshrc tmux.conf git.scmbrc ackrc"    # list of files/folders to symlink in homedir
 apt=`command -v apt-get`
 yum=`command -v yum`
 packages="tmux vim htop ncdu zsh python-virtualenv"
