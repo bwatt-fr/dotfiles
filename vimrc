@@ -75,3 +75,7 @@ nmap <leader>j mA:Ack<space>
 " " Place un marqueur et cherche le mot sous le curseur
 nmap <leader>ja mA:Ack "<C-r>=expand("<cword>")<cr>"
 nmap <leader>jA mA:Ack "<C-r>=expand("<cWORD>")<cr>"
+
+"Search of tags file
+set tags=./tags,tags;$HOME
+
