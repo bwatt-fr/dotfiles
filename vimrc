@@ -79,3 +79,6 @@ nmap <leader>jA mA:Ack "<C-r>=expand("<cWORD>")<cr>"
 "Search of tags file
 set tags=./tags,tags;$HOME
 
+"CtrlP
+let g:ctrlp_map = '<leader>c' 
+
