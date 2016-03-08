@@ -82,3 +82,5 @@ set tags=./tags,tags;$HOME
 "CtrlP
 let g:ctrlp_map = '<leader>c' 
 
+"Ctrltags
+nnoremap <leader>. :CtrlPTag<cr>
