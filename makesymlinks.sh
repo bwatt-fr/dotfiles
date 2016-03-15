@@ -93,3 +93,6 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+# install of vim plugine
+vim +PluginInstall +qall!
