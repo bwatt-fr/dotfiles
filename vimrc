@@ -102,5 +102,5 @@ let g:ctrlp_map = '<leader>c'
 nnoremap <leader>. :CtrlPTag<cr>
 
 "Ctags remap
-nnoremap <C-]> <C-l>
-
+nnoremap <leader>k <C-]>
+nnoremap <leader>t <C-t>
