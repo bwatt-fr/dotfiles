@@ -1,3 +1,21 @@
+"Activation de vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
+call vundle#begin()
+
+Plugin 'gmarik/vundle'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+Plugin 'vim-scripts/LycosaExplorer'
+Plugin 'nvie/vim-flake8'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'vim-scripts/nextval'
+
+call vundle#end()
+
 " Activation of pathogen
 call pathogen#infect()
 
@@ -22,8 +40,6 @@ set smartcase
 set background=dark
 "colorscheme solarized
 colorscheme delek
-
-set nocompatible
 
 " Switch on filetype detection and loads 
 " indent file (indent.vim) for specific file types
@@ -87,3 +103,4 @@ nnoremap <leader>. :CtrlPTag<cr>
 
 "Ctags remap
 nnoremap <C-]> <C-l>
+
