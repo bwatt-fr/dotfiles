@@ -95,5 +95,5 @@ for file in $files; do
 done
 
 # install of vim plugins
-git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles.vim/bundle/vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/vundle
 vim +PluginInstall +qall!
