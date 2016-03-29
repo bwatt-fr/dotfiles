@@ -94,5 +94,6 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
-# install of vim plugine
+# install of vim plugins
+git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles.vim/bundle/vundle
 vim +PluginInstall +qall!
