@@ -12,8 +12,8 @@ files="bashrc vimrc vim zshrc tmux.conf git.scmbrc ackrc ctags"    # list of fil
 apt=`command -v apt-get`
 yum=`command -v yum`
 packages="tmux vim htop ncdu zsh python-virtualenv ctags"
-packages_apt="virtualenvwrapper ack-grep"
-packages_yum="python-vitualenvwrapper ack"
+packages_apt="virtualenvwrapper ack-grep vim-nox"
+packages_yum="python-vitualenvwrapper ack vim-enhanced"
 
 ##########
 
