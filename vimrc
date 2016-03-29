@@ -13,6 +13,7 @@ Plugin 'nvie/vim-flake8'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'vim-scripts/nextval'
+"Plugin 'klen/python-mode'
 
 call vundle#end()
 
