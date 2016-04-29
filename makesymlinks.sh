@@ -8,13 +8,13 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim zshrc tmux.conf git.scmbrc"    # list of files/folders to symlink in homedir
+files="bashrc vimrc vim zshrc tmux.conf git.scmbrc ackrc ctags"    # list of files/folders to symlink in homedir
 apt=`command -v apt-get`
 yum=`command -v yum`
 pacman=`command -v pacman`
-packages="tmux vim htop ncdu zsh python-virtualenv"
-packages_apt="virtualenvwrapper"
-packages_yum="python-vitualenvwrapper"
+packages="tmux vim htop ncdu zsh python-virtualenv ctagss"
+packages_apt="virtualenvwrapper ack-grep vim-nox"
+packages_yum="python-vitualenvwrapper ack vim-enhanced"
 
 ##########
 
@@ -100,3 +100,7 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+# install of vim plugins
+git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/bundle/vundle
+vim +PluginInstall +qall!

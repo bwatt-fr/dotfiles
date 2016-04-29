@@ -1,3 +1,22 @@
+"Activation de vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
+call vundle#begin()
+
+Plugin 'gmarik/vundle'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+Plugin 'vim-scripts/LycosaExplorer'
+Plugin 'nvie/vim-flake8'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'vim-scripts/nextval'
+"Plugin 'klen/python-mode'
+
+call vundle#end()
+
 " Activation of pathogen
 call pathogen#infect()
 
@@ -22,8 +41,6 @@ set smartcase
 set background=dark
 "colorscheme solarized
 colorscheme delek
-
-set nocompatible
 
 " Switch on filetype detection and loads 
 " indent file (indent.vim) for specific file types
@@ -67,3 +84,24 @@ imap <right> <nop>
 "Mapleader
 let mapleader = ","
 set hidden
+
+" Parametres par defaut pour ack
+let g:ackprg="ack -H --nocolor --nogroup --column"
+" " Place un marqueur et cherche
+nmap <leader>j mA:Ack<space>
+" " Place un marqueur et cherche le mot sous le curseur
+nmap <leader>ja mA:Ack "<C-r>=expand("<cword>")<cr>"
+nmap <leader>jA mA:Ack "<C-r>=expand("<cWORD>")<cr>"
+
+"Search of tags file
+set tags=./tags,tags;$HOME
+
+"CtrlP
+let g:ctrlp_map = '<leader>c' 
+
+"Ctrltags
+nnoremap <leader>. :CtrlPTag<cr>
+
+"Ctags remap
+nnoremap <leader>k <C-]>
+nnoremap <leader>t <C-t>
