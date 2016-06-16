@@ -11,7 +11,8 @@ olddir=~/dotfiles_old             # old dotfiles backup directory
 files="bashrc vimrc vim zshrc tmux.conf git.scmbrc ackrc ctags"    # list of files/folders to symlink in homedir
 apt=`command -v apt-get`
 yum=`command -v yum`
-packages="tmux vim htop ncdu zsh python-virtualenv ctags"
+pacman=`command -v pacman`
+packages="tmux vim htop ncdu zsh python-virtualenv ctagss"
 packages_apt="virtualenvwrapper ack-grep vim-nox"
 packages_yum="python-vitualenvwrapper ack vim-enhanced"
 
@@ -40,8 +41,12 @@ elif [ -n "$yum" ]; then
     done
     for pack in $packages_apt; do
 	sudo yum install -y $pack
+    done	
+elif [ -n "$pacman" ]; then
+    for pack in $packages; do
+	sudo pacman -Sy $pack
     done
-fi	
+fi
 
 install_zsh () {
 # Test to see if zshell is installed.  If it is:
@@ -65,8 +70,10 @@ else
             sudo apt-get -y install zsh
 	elif [ -n "$yum" ]; then
             sudo yum -y install zsh
+	elif [ -n "$pacman" ]; then
+	    sudo pacman -Sy zsh
 	else
-	    echo "Err: no path to apt-get or yum";
+	    echo "Err: no path to apt-get or yum or pacman";
 	    exit 1
 	fi
         install_zsh
