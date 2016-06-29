@@ -39,6 +39,9 @@ set hlsearch
 set incsearch
 set smartcase
 
+"Encoding
+set encoding=utf-8
+
 " Color
 set background=dark
 "colorscheme solarized
