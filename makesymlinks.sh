@@ -35,6 +35,7 @@ if [ -n "$apt" ]; then
     for pack in $packages_apt; do
 	sudo apt-get install -y $pack
     done
+    sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
 elif [ -n "$yum" ]; then
     for pack in $packages; do
 	sudo yum install -y $pack
