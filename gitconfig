@@ -1,0 +1,38 @@
+[push]
+	default = simple
+[core]
+	editor = vim
+[color]
+	ui = true
+	branch = auto
+	diff = auto
+	status = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[alias]
+	undo = reset --hard
+	unadd = reset HEAD
+    untrack = git rm --cached
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	tree = log --pretty=format:\"%h %s\" --graph
+	visual = !gitk
+    stash-unapply = !git stash show -p | git apply -R
+    sshow = "!f() { git stash show stash^{/$*} -p; }; f"
+    sapply = "!f() { git stash apply stash^{/$*}; }; f"
+    sunapply = "!f() { git stash show -p stash^{/$*} | git apply -R; }; f" 
+[merge]
+	tools = vimdiff

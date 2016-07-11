@@ -13,8 +13,8 @@ apt=`command -v apt-get`
 yum=`command -v yum`
 pacman=`command -v pacman`
 packages="tmux vim htop ncdu zsh python-virtualenv ctagss"
-packages_apt="virtualenvwrapper ack-grep vim-nox"
-packages_yum="python-vitualenvwrapper ack vim-enhanced"
+packages_apt="virtualenvwrapper ack-grep vim-nox gitconfig"
+packages_yum="python-vitualenvwrapper ack vim-enhanced giconfig"
 
 ##########
 
