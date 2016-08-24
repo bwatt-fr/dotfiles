@@ -34,10 +34,10 @@ syntax on " Turn on syntax highligthing
 set showmatch  "Show matching bracets when text indicator is over them
 
 " Search
-set ignorecase
+set ignorecase "Searches are not case sensitives
+set smartcase "Except of searches with upper case
 set hlsearch
 set incsearch
-set smartcase
 
 "Encoding
 set encoding=utf-8
@@ -56,14 +56,15 @@ set autoindent " Copy indent from the row above
 filetype plugin indent on    " required
 filetype plugin on
 """"""""""""""""""""""""""""""""""
-" Some other confy settings
+" Some other conf settings
 """"""""""""""""""""""""""""""""""
 " set nu " Number lines
 set hls " highlight search
 set lbr " linebreak
 
-set showcmd
+set showcmd "Display commands in the status bar
 set mouse=a
+set history=50
 
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
