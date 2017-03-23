@@ -52,9 +52,6 @@ plugins=(jsontools python scala sublime sudo taskwarrior tmux debian dirhistory 
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-export PATH="/home/pierrick/.local/bin:/home/pierrick/google-cloud-sdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/pierrick/opt/node-webkit:/home/pierrick/Logiciel/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -76,7 +73,7 @@ export PATH="/home/pierrick/.local/bin:/home/pierrick/google-cloud-sdk/bin:/usr/
 # The next line enables bash completion for gcloud.
 #source /home/pierrick/google-cloud-sdk/completion.bash.inc
 
-export PYTHONPATH=/usr/local/lib/python2.7/dist-packages:$PYTHONPATH
+#export PYTHONPATH=/usr/local/lib/python2.7/dist-packages:$PYTHONPATH
 
 setopt no_nomatch # if there are no matches for globs, leave them alone and execute the command
 
@@ -87,14 +84,7 @@ TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
-# Add of gcloud command completion
+alias steam="STEAM_RUNTIME=0 LIBGL_DRI3_DISABLE=1 steam"
 
-source "$HOME/google-cloud-sdk/completion.zsh.inc"
-source "$HOME/google-cloud-sdk/path.zsh.inc"
-source /usr/local/bin/virtualenvwrapper.sh
-
-# The next line updates PATH for the Google Cloud SDK.
-source '/home/pierrick/google-cloud-sdk/path.zsh.inc'
-
-# The next line enables shell command completion for gcloud.
-source '/home/pierrick/google-cloud-sdk/completion.zsh.inc'
+# Default editor
+export EDITOR=vim
