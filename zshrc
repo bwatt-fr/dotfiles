@@ -81,10 +81,22 @@ setopt no_nomatch # if there are no matches for globs, leave them alone and exec
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 
 #Add of scm-breeze
-
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
+# Aliases
 alias steam="STEAM_RUNTIME=0 LIBGL_DRI3_DISABLE=1 steam"
+alias vnc-viewer="/home/bwatt/Logiciels/./VNC-Viewer-6.0.2-Linux-x64"
+alias mariadb="sudo systemctl start mysqld"
 
 # Default editor
 export EDITOR=vim
+
+# Add color on man
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
