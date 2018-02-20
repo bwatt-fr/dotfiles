@@ -7,21 +7,16 @@
 ########## Variables
 
 dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
 files="bashrc vimrc vim zshrc tmux.conf git.scmbrc ackrc ctags"    # list of files/folders to symlink in homedir
+files_config="flake8"
 apt=`command -v apt-get`
 yum=`command -v yum`
 pacman=`command -v pacman`
 packages="tmux vim htop ncdu zsh python-virtualenv ctags"
-packages_apt="virtualenvwrapper ack-grep vim-nox gitconfig"
-packages_yum="python-vitualenvwrapper ack vim-enhanced giconfig"
+packages_apt="ack-grep vim-nox gitconfig"
+packages_yum="ack vim-enhanced giconfig"
 
 ##########
-
-# create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
-mkdir -p $olddir
-echo "...done"
 
 # change to the dotfiles directory
 echo "Changing to the $dir directory"
@@ -94,12 +89,16 @@ if [[ ! -d ~/.scm_breeze ]]; then
     git clone https://github.com/ndbroadbent/scm_breeze.git ~/.scm_breeze
 fi
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
+# Create symlinks in home directory
 for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
+done
+
+# Create symlinks in .config directory
+for file in $files_config; do
+    echo "Creating symlink to $file in config directory."
+    ln -s $dir/$file ~/.config/$file
 done
 
 # install of vim plugins
