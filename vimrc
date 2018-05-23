@@ -15,6 +15,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'vim-scripts/nextval'
 Plugin 'hdima/python-syntax'
 Plugin 'yegappan/greplace'
+Plugin 'dln/avro-vim'
 "Plugin 'klen/python-mode'
 
 call vundle#end()
@@ -55,6 +56,10 @@ filetype on
 set autoindent " Copy indent from the row above
 filetype plugin indent on    " required
 filetype plugin on
+
+" Managing of .avdl file
+au BufRead,BufNewFile *.avdl setlocal filetype=avro-idl
+
 """"""""""""""""""""""""""""""""""
 " Some other conf settings
 """"""""""""""""""""""""""""""""""
