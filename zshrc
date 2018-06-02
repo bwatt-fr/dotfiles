@@ -70,6 +70,12 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# Import of zshrc local if exists
+if [ -e $HOME/.zshrc.local ]
+then
+	source $HOME/.zshrc.local
+fi
+
 # The next line enables bash completion for gcloud.
 #source /home/pierrick/google-cloud-sdk/completion.bash.inc
 
