@@ -51,8 +51,8 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     if [[ ! -d ~/.oh-my-zsh/ ]]; then
         git clone http://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     fi
-    rm ~/.oh-my-zsh/oh-my-zsh.sh
-    cp $dir/oh-my-zsh.sh ~/.oh-my-zsh/oh-my-zsh.sh
+    # rm ~/.oh-my-zsh/oh-my-zsh.sh
+    # cp $dir/oh-my-zsh.sh ~/.oh-my-zsh/oh-my-zsh.sh
     # Set the default shell to zsh if it isn't currently set to zsh
     if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
         chsh -s $(which zsh)

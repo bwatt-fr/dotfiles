@@ -7,7 +7,7 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle'
 Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
+Plugin 'JohnStarich/vim-easytags'
 Plugin 'vim-scripts/LycosaExplorer'
 Plugin 'nvie/vim-flake8'
 Plugin 'ctrlpvim/ctrlp.vim'

@@ -90,7 +90,7 @@ TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
 # Aliases
-alias steam="STEAM_RUNTIME=0 LIBGL_DRI3_DISABLE=1 steam"
+#alias steam="STEAM_RUNTIME=0 LIBGL_DRI3_DISABLE=1 steam"
 alias vnc-viewer="/home/bwatt/Logiciels/./VNC-Viewer-6.0.2-Linux-x64"
 alias mariadb="sudo systemctl start mysqld"
 
